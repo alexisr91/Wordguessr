@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1 class="flex justify-center text-2xl ps-8 mx-4 leading-10 font-sans font-bold truncate">Guess the world</h1>
-    <h2 class="flex justify-center text-2xl ps-8 mx-4 leading-10 font-serif truncate">Show me a random word here</h2>
+    <h2 class="flex justify-center text-2xl ps-8 mx-4 leading-10 font-serif truncate" th:text="${wordToDisplay}">Show me a random word here</h2>
+    <!-- th represents the prefix of thymeleaf that we need to declare for an thymeleaf actions-->
 <hr/>
 </body>
 </html>
