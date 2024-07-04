@@ -6,10 +6,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>WordGuessr</title>
 </head>
-<body>
-    <h1 class="flex justify-center text-2xl ps-8 mx-4 leading-10 font-sans font-bold truncate">Guess the world</h1>
+<body class="min-h-screen">
+    <h1 class="flex justify-center text-2xl ps-10 mx-4 leading-10 font-sans font-bold truncate">Guess the world</h1>
     <h2 class="flex justify-center text-2xl ps-8 mx-4 leading-10 font-serif truncate" th:text="${wordToDisplay}">Show me a random word here</h2>
     <!-- th represents the prefix of thymeleaf that we need to declare for an thymeleaf actions-->
-<hr/>
+<hr class="my-8">
+
+    <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-2 space-y-2 sm:space-y-0">
+        <form action="game-home" method="GET" class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2">
+            <label class="flex my-2 font-serif text-2xl"> Guess the character :</label>
+            <input type="text" name="guessedChar" class="border border-black mx-2" />
+            <input type="submit" value="Play" class="bg-blue-500 hover:bg-blue-200 text-white font-bold py-1 px-4 rounded cursor-pointer">
+        </form>
+    </div>
+    
+  
 </body>
 </html>
