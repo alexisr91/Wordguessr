@@ -26,19 +26,35 @@ public class GameService {
 
     @Override
     public String toString(){
-
+        // Return String 
         String ret = "";
 
         for(char c:allCharactersOfTheWord){
             if(c == '\u0000'){
                 // In unicode \u0000 means null
-                ret = ret + " _";
+                // SO if this null we are returning a blank
+                ret = ret + "_";
             }
-
+            else{
+                ret = ret + c;
+            }
             ret = ret + " ";
             // we return an underscore but also a blank to make space in-between the underscore 
         }
 
         return ret;
+    }
+
+    public void addGuess(char guessedChar){
+
+        // Check if the guessed character does exist if the randonmlyChoosenWord()
+        // LINEAR SEARCH choosen to iterate 
+        for(int i = 0; i< randomlyChoosenWord.length() ;i++){
+
+            if(guessedChar == randomlyChoosenWord.charAt(i)){
+
+                allCharactersOfTheWord[i] = guessedChar;
+            }
+        }
     }
 }
