@@ -49,6 +49,8 @@ public class GameController {
 
         gameService = gameUtils.reload();
 
+        gameUtils.resetTries();
+
         return "redirect:/game-home";
     }
 }

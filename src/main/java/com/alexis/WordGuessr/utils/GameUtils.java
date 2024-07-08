@@ -22,6 +22,11 @@ public class GameUtils {
         return MAX_TRIES;
     }
 
+    public void resetTries(){
+
+        MAX_TRIES = 5;
+    }
+
     public int getTriesRemaining(){
 
         return MAX_TRIES;
