@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="style.css" rel="game-home-page.css">
-    <title>WordGuessr</title>
+    <title>🌎 WordGuessr</title>
 
 </head>
-<body class="min-h-screen bg-gradient-to-b from-slate-50 to-zinc-700">
-    <h1 class="flex justify-center text-5xl ps-10 mx-4 my-6 leading-10 font-sans font-bold bg-gradient-to-t from-rose-300 to-indigo-600 bg-clip-text text-transparent">Guess the world</h1>
+<body class="min-h-screen bg-gradient-to-r from-slate-50 to-indigo-100">
+    <h1 class="flex text-2xl sm:whitespace-nowrap justify-center text-5xl ps-10 mx-4 my-6 leading-10 font-sans font-bold bg-gradient-to-t from-rose-300 to-indigo-600 bg-clip-text text-transparent"> 🖥️ Guess the world </h1>
 
     <h2 class="flex justify-center text-2xl ps-8 mx-4 leading-10 font-serif truncate" th:text="${wordToDisplay}">
     Show me a random word here</h2>
 
-    <h2 class="flex justify-end mx-6 my-2 " th:text="'Tries Remaining : '  + ${triesLeft}">Tries left </h2>
+    <h2 class="flex justify-end mx-6 my-2 font-bold " th:text="'Tries Remaining : '  + ${triesLeft}"></h2>
     <!-- th represents the prefix of thymeleaf that we need to declare for an thymeleaf actions-->
     
     <script th:inline="javascript">
@@ -39,16 +39,18 @@
     </script>
 <hr/>
 
-    <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-2 space-y-2 sm:space-y-0 py-6">
+    <div class="flex sm:flex-row justify-center items-center sm:space-x-2 space-x-2 py-6">
         <form action="game-home" method="GET" class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2">
-            <label class="flex my-2 mb-4font-serif text-2xl bg-gradient-to-t from-rose-800 to-indigo-600 bg-clip-text text-transparent"> Enter the letters </label>
+            <label class="flex my-2 mb-4 font-serif text-2xl bg-gradient-to-t from-rose-800 to-indigo-600 bg-clip-text text-transparent"> Enter the letters </label>
             <input type="text" name="guessedChar" class="border border-black mx-2" id="guessedChar" />
-            <input type="submit" value="Play" onclick="checkIfGameOver();" id="Play" class=" Play bg-blue-500 hover:bg-blue-200 text-white font-bold py-1 px-4 rounded cursor-pointer">
-            <input type="button" value="reload" id="reload" class="bg-green-800 hover:bg-green-500 text-white font-bold py-1 px-4 rounded cursor-pointer" onclick="reloadGame();">
-        </form>
+        <div>
 
+                <input type="submit" value="Play" onclick="checkIfGameOver();" id="Play" class=" Play sm:flex-row bg-blue-500 hover:bg-blue-200 text-white font-bold py-2 px-4 rounded cursor-pointer">
+                <input type="button" value="reload" id="reload" class=" sm: flex-row bg-green-800 hover:bg-green-500 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="reloadGame();">
+            </form>
+        </div>    
     </div>
     
-  
+   
 </body>
 </html>
