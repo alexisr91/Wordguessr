@@ -43,5 +43,12 @@ public class GameController {
         // AddAttribute will be the method that will interact with the controller to the view
         return "game-home-page";
     }
-    
+
+    @GetMapping("/reload")   
+    public String reloadGame(){
+
+        gameService = gameUtils.reload();
+
+        return "redirect:/game-home";
+    }
 }

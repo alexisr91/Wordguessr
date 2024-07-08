@@ -1,18 +1,29 @@
 package com.alexis.WordGuessr.service;
 
 import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 /**
  * Create the object of GameService and store the object inside container ( Application context )
+ * Scope is the lifecycle of an instance
+ * The scope prototype creates a new bean instance each time when requested
  */
 @Service
+@Scope("prototype")
 public class GameService {
+
+    @Autowired
+    //Container
+    ConfigurableApplicationContext applicationContext;
 
     private String randomlyChoosenWord= null;
     Random random = new Random();
     
-    private String[] randomWords = {"father", "mother", "sister", "goodbye", "software", "framework"};
+    private String[] randomWords = {"father", "mother", "sister", "goodbye", "software", "framework", "java", "javascript", "kotlin", "test"};
 
     private char[] allCharactersOfTheWord;
 

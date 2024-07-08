@@ -16,7 +16,7 @@
 
     <h2 class="flex justify-end mx-6 my-2 " th:text="'Tries Remaining : '  + ${triesLeft}">Tries left </h2>
     <!-- th represents the prefix of thymeleaf that we need to declare for an thymeleaf actions-->
-
+    
     <script th:inline="javascript">
 
         window.onload = function checkIfGameOver(){
@@ -25,12 +25,17 @@
                 alert('Game Over');
                 document.getElementById('guessedChar').disabled = true;
                 document.getElementById('Play').disabled = true;
-                var playButton = document.getElementById('Play');
+                
                 //document.querySelector('#Play').disabled = true;
             }
-                playButton.disabled = true;
+        }
+        
+        function reloadGame(){
+
+            window.location.href = "http://localhost:8080/reload";
         }
 
+      
     </script>
 <hr/>
 
@@ -39,7 +44,9 @@
             <label class="flex my-2 mb-4font-serif text-2xl bg-gradient-to-t from-rose-800 to-indigo-600 bg-clip-text text-transparent"> Enter the letters </label>
             <input type="text" name="guessedChar" class="border border-black mx-2" id="guessedChar" />
             <input type="submit" value="Play" onclick="checkIfGameOver();" id="Play" class=" Play bg-blue-500 hover:bg-blue-200 text-white font-bold py-1 px-4 rounded cursor-pointer">
+            <input type="button" value="reload" id="reload" class="bg-green-800 hover:bg-green-500 text-white font-bold py-1 px-4 rounded cursor-pointer" onclick="reloadGame();">
         </form>
+
     </div>
     
   
