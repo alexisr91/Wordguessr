@@ -21,24 +21,12 @@
         
         // Game Over Modal functions
         function showModal(){
-            var modal = document.getElementById('gameOverModal');
+            const modal = document.getElementById('gameOverModal');
             modal.classList.remove('hidden');
         }
 
-        // Hide the modal
-        function closeModal() {
-            document.getElementById('closeModal').style.display = 'none';         
-            if(modal){
-                modal.remove();
-            }
-        }
-
-
-
-        
-        
         window.onload = function checkIfGameOver(){
-            var numberOfTriesRemaining = [[${triesLeft}]];
+            const numberOfTriesRemaining = [[${triesLeft}]];
             if(numberOfTriesRemaining === 0){
                 showModal();
                 alert("GAME OVER");
@@ -109,13 +97,22 @@
                     <h3 class="text-4xl font-bold bg-gradient-to-t from-rose-50 to-indigo-600 bg-clip-text text-transparent">GAME OVER</h3>
                 </div>
                 <div class="flex justify-end w-full">
-                    <button id="closeModal" class="text-red-800 font-bold antialiased hover:text-stone-500">
+                    <button id="closeModal" class=" text-red-800 font-bold antialiased hover:text-stone-500">
                         CLOSE
                     </button>
                 </div>
             </div>
         </div>
         
-   
+   <script>
+         // Hide the modal
+        function toggleModal (selector) {
+
+                document.getElementById(selector).classList.toggle('hidden');
+        }
+
+        closeModal.addEventListener('click', () => toggleModal('gameOverModal'));
+
+   </script>
 </body>
 </html>
