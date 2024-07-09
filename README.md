@@ -47,6 +47,8 @@ Yes this is responsive and I used the Tailwind utlity classes to handle the desi
 - User can reload the page
 - When user reload the page, the number of tries is reset
 - Get Request with the getmapping annotation when you enter the parameter
+- User is now restricted to a single character
+- User is now restriced to only enter lower case characters and nothing else
 
 
 
