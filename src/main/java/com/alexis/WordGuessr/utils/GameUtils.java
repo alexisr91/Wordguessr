@@ -11,7 +11,7 @@ import com.alexis.WordGuessr.service.GameService;
 public class GameUtils {
     
     // Number of tries 
-    private int MAX_TRIES = 5;
+    private int MAX_TRIES = 3;
     @Autowired
     //Container
     ConfigurableApplicationContext applicationContext;
