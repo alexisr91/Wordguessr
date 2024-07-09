@@ -24,7 +24,6 @@ public class GameService {
     Random random = new Random();
     
     private String[] randomWords = {"father", "mother", "sister", "goodbye", "software", "framework", "java", "javascript", "kotlin", "test","junit","kafta","database","grocery"};
-
     private char[] allCharactersOfTheWord;
 
 
@@ -43,7 +42,7 @@ public class GameService {
         for(char c:allCharactersOfTheWord){
             if(c == '\u0000'){
                 // In unicode \u0000 means null
-                // SO if this null we are returning a blank
+                // So if null we are returning a blank
                 ret = ret + "_";
             }
             else{

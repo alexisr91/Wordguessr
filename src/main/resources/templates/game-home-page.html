@@ -35,6 +35,7 @@
                 
                 //document.querySelector('#Play').disabled = true;
             }
+            
         }
         
        
@@ -59,7 +60,7 @@
                 callError(true);
             }}
         
-            function callError(showError){
+            function callError(showError, showSecondError){
 
                 const errorMessage = document.getElementById('error-message');
 
@@ -84,6 +85,7 @@
             <label class="flex my-2 mb-4 font-serif text-2xl bg-gradient-to-t from-rose-800 to-indigo-600 bg-clip-text text-transparent"> Enter the letters </label>
             <input type="text" name="guessedChar" class="border border-black mx-2" id="guessedChar" oninput="userRestrictions(this)" />
                 <span id="error-message" class="hidden text-red-500 text-sm">Please enter lowercase letters only.</span>
+                
         <div>
                 <input type="submit" value="Play" onclick="checkIfGameOver();" id="Play" class=" Play sm:flex-row bg-blue-500 hover:bg-blue-200 text-white font-bold py-2 px-4 rounded cursor-pointer">
                 <input type="button" value="reload" id="reload" class=" sm: flex-row bg-green-800 hover:bg-green-500 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="reloadGame();">
@@ -91,18 +93,18 @@
         </div> 
         <!-- Game Over Modal-->
 
-        <div id="gameOverModal" class="fixed flex items-center justify-center w-full h-full bg-opacity-50 z-10 hidden">
-            <div class="bg-gradient-to-r from-slate-50 to-indigo-100 p-6 rounded-lg shadow-lg w-1/3 h-1/3 flex flex-col justify-between items-center">
-                <div class="flex-grow flex items-center justify-center">
-                    <h3 class="text-4xl font-bold bg-gradient-to-t from-rose-50 to-indigo-600 bg-clip-text text-transparent">GAME OVER</h3>
-                </div>
-                <div class="flex justify-end w-full">
-                    <button id="closeModal" class=" text-red-800 font-bold antialiased hover:text-stone-500">
-                        CLOSE
-                    </button>
-                </div>
+    <div id="gameOverModal" class="fixed flex items-center justify-center w-full h-full bg-opacity-50 z-10 hidden">
+        <div class="bg-gradient-to-r from-slate-50 to-indigo-100 p-6 rounded-lg shadow-lg w-1/3 h-1/3  flex flex-col justify-between items-center sm:w-full sm:items-center sm: lg:w-1/3 lg:h-1/3 ">
+            <div class="flex-grow flex items-center justify-center">
+                <h3 class="text-4xl font-bold bg-gradient-to-t from-rose-50 to-indigo-600 bg-clip-text text-transparent sm:text-4xl sm:justify-center sm:items-center">GAME OVER</h3>
+            </div>
+            <div class="flex justify-end w-full">
+                <button id="closeModal" class=" text-red-600 font-bold antialiased hover:text-stone-500">
+                    CLOSE
+                </button>
             </div>
         </div>
+    </div>
         
    <script>
          // Hide the modal
