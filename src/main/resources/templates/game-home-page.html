@@ -9,7 +9,7 @@
 
 </head>
 <body class="min-h-screen bg-gradient-to-r from-slate-50 to-indigo-100">
-    <h1 class="flex text-2xl sm:whitespace-nowrap justify-center text-5xl ps-10 mx-4 my-6 leading-10 font-sans font-bold bg-gradient-to-t from-rose-300 to-indigo-600 bg-clip-text text-transparent"> 🖥️ Guess the world </h1>
+    <h1 class="flex text-2xl sm:awhitespace-nowrap justify-center text-5xl ps-10  my-6 leading-10 font-sans font-bold bg-gradient-to-t from-rose-300 to-indigo-600 bg-clip-text text-transparent"> 🖥️ Guess the world </h1>
 
     <h2 class="flex justify-center text-2xl ps-8 mx-4 leading-10 font-serif truncate" th:text="${wordToDisplay}">
     Show me a random word here</h2>
@@ -35,6 +35,48 @@
             window.location.href = "http://localhost:8080/reload";
         }
 
+       
+        function userRestrictions(input,event){
+
+            // Limit the user characters to 1
+            if (input.value.length > 1) {
+                input.value = input.value.slice(0, 1);
+            }
+
+            if(/[a-z]/.test(input.value) && keyAssignation(event)){
+
+                // Show the error message
+                callError(false);
+                // Replace letter that aren't from a to z and in lowercase
+                input.value = input.value.replace(/[^a-z]/g, '');
+            }else{
+                callError(true);
+            }
+        
+            function keyAssignation(event){
+
+                return (event.key === "Backspace" || event.key === "Delete" )
+            }
+
+
+            function callError(showError){
+
+                const errorMessage = document.getElementById('error-message');
+
+                if(showError){
+                    // Display the error message
+                    errorMessage.classList.remove('hidden');
+                    errorMessage.classList.add('block');
+                }else{
+
+                    errorMessage.classList.remove('block');
+                    errorMessage.classList.add('hidden');
+                }
+            }
+            
+
+    }
+
       
     </script>
 <hr/>
@@ -42,12 +84,12 @@
     <div class="flex sm:flex-row justify-center items-center sm:space-x-2 space-x-2 py-6">
         <form action="game-home" method="GET" class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2">
             <label class="flex my-2 mb-4 font-serif text-2xl bg-gradient-to-t from-rose-800 to-indigo-600 bg-clip-text text-transparent"> Enter the letters </label>
-            <input type="text" name="guessedChar" class="border border-black mx-2" id="guessedChar" />
+            <input type="text" name="guessedChar" class="border border-black mx-2" id="guessedChar" oninput="userRestrictions(this)" />
+                <span id="error-message" class="hidden text-red-500 text-sm">Please enter lowercase letters only.</span>
         <div>
-
                 <input type="submit" value="Play" onclick="checkIfGameOver();" id="Play" class=" Play sm:flex-row bg-blue-500 hover:bg-blue-200 text-white font-bold py-2 px-4 rounded cursor-pointer">
                 <input type="button" value="reload" id="reload" class=" sm: flex-row bg-green-800 hover:bg-green-500 text-white font-bold py-2 px-4 rounded cursor-pointer" onclick="reloadGame();">
-            </form>
+        </form>
         </div>    
     </div>
     

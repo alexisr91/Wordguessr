@@ -23,7 +23,7 @@ public class GameService {
     private String randomlyChoosenWord= null;
     Random random = new Random();
     
-    private String[] randomWords = {"father", "mother", "sister", "goodbye", "software", "framework", "java", "javascript", "kotlin", "test"};
+    private String[] randomWords = {"father", "mother", "sister", "goodbye", "software", "framework", "java", "javascript", "kotlin", "test","junit","kafta","database","grocery"};
 
     private char[] allCharactersOfTheWord;
 
@@ -58,6 +58,7 @@ public class GameService {
 
     public boolean addGuess(char guessedChar){
 
+
         boolean isGuessCorrect = false;
         // Check if the guessed character does exist if the randonmlyChoosenWord()
         // LINEAR SEARCH choosen to iterate 
@@ -69,7 +70,6 @@ public class GameService {
                 isGuessCorrect = true;
             }
         }
-
         return isGuessCorrect;
     }
 }
