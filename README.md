@@ -49,7 +49,7 @@ Yes this is responsive and I used the Tailwind utlity classes to handle the desi
 - Get Request with the getmapping annotation when you enter the parameter
 - User is now restricted to a single character
 - User is now restriced to only enter lower case characters and nothing else
-
+- A modal is displayed when the game is over
 
 
 
