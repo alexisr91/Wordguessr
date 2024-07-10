@@ -37,15 +37,12 @@
             }
             
         }
-        
-       
 
         function reloadGame(){
 
             window.location.href = "http://localhost:8080/reload";
         }
 
-       
         function userRestrictions(input,event){
             // Limit the user characters to 1
             if(input.value.length > 1) {
@@ -83,7 +80,7 @@
     <div class="flex sm:flex-row justify-center items-center sm:space-x-2 space-x-2 py-6">
         <form action="game-home" method="GET" class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2">
             <label class="flex my-2 mb-4 font-serif text-2xl bg-gradient-to-t from-rose-800 to-indigo-600 bg-clip-text text-transparent"> Enter the letters </label>
-            <input type="text" name="guessedChar" class="border border-black mx-2" id="guessedChar" oninput="userRestrictions(this)" />
+            <input type="text" name="guessedChar" class="border border-black mx-2" id="guessedChar" oninput="userRestrictions(this)" required />
                 <span id="error-message" class="hidden text-red-500 text-sm">Please enter lowercase letters only.</span>
                 
         <div>
@@ -94,9 +91,9 @@
         <!-- Game Over Modal-->
 
     <div id="gameOverModal" class="fixed flex items-center justify-center w-full h-full bg-opacity-50 z-10 hidden">
-        <div class="bg-gradient-to-r from-slate-50 to-indigo-100 p-6 rounded-lg shadow-lg w-1/3 h-1/3  flex flex-col justify-between items-center sm:w-full sm:items-center sm: lg:w-1/3 lg:h-1/3 ">
+        <div class="bg-gradient-to-r from-slate-50 to-indigo-100 p-6 rounded-lg shadow-lg w-1/3 h-1/3  flex flex-col justify-between items-center sm:h-1/3 sm:w-full sm:items-center   lg:w-1/3 lg:h-1/3 ">
             <div class="flex-grow flex items-center justify-center">
-                <h3 class="text-4xl font-bold bg-gradient-to-t from-rose-50 to-indigo-600 bg-clip-text text-transparent sm:text-4xl sm:justify-center sm:items-center">GAME OVER</h3>
+                <h3 class="text-4xl font-bold bg-gradient-to-t from-rose-50 to-indigo-600 bg-clip-text text-transparent sm:text-pretty sm:text-6xl sm:justify-center sm:items-center ">GAME OVER</h3>
             </div>
             <div class="flex justify-end w-full">
                 <button id="closeModal" class=" text-red-600 font-bold antialiased hover:text-stone-500">
