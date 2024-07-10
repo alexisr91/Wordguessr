@@ -20,7 +20,7 @@ This is a game application where you have to guess the word
 
 #### Is this a finished project ?
 
-No, I'm thinking about restricting users freedom for this application
+I'm thinking about upgrading my project but almost every functionalities I wanted to implement are finally made.
 
 
 #### Which framework or libraries did you use ? 
@@ -47,11 +47,11 @@ Yes this is responsive and I used the Tailwind utlity classes to handle the desi
 - User can reload the page
 - When user reload the page, the number of tries is reset
 - Get Request with the getmapping annotation when you enter the parameter
-- User is now restricted to a single character
-- User is now restriced to only enter lower case characters and nothing else
+- The user is now restricted to a single character
+- the user is now restriced to only enter lower case characters and nothing else
+- the user can't enter a blank character, he/she will have a restriction mission
 - A modal is displayed when the game is over
-
-
+- The modal has to be closed
 
 
 
